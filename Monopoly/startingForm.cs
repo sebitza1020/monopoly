@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Monopoly
 {
-    public partial class Form1 : Form
+    public partial class startingForm : Form
     {
-        public Form1()
+        public startingForm()
         {
             InitializeComponent();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            MonopolyGame game = new MonopolyGame();
+            game.Start(this);
         }
     }
 }
