@@ -20,17 +20,21 @@ namespace Monopoly
 
         internal void Show(Form f)
         {
-            Panel p = new Panel();
-            p.BackColor = color;
-            p.Left = x;
-            p.Top = y;
-            p.Height = p.Width = 36;
+            Panel backgorundPanel = new Panel();
+            backgorundPanel.BorderStyle = BorderStyle.Fixed3D;
+            backgorundPanel.BackColor = color;
+            backgorundPanel.Left = x;
+            backgorundPanel.Top = y;
+            backgorundPanel.Height = Constants.cellHeight;
+            backgorundPanel.Width = Constants.cellWidth;
 
-            Label cellName = new Label();
-            cellName.Text = propertyName;
-            cellName.Left = cellName.Top = 10;
+            Label cellPropertyName = new Label();
+            cellPropertyName.Text = propertyName;
+            cellPropertyName.Left = Constants.leftDistanceOfPropetyNameInPanel;
+            cellPropertyName.Top = Constants.topDistanceOfPropetyNameInPanel;
+            backgorundPanel.Controls.Add(cellPropertyName);
 
-            f.Controls.Add(p);
+            f.Controls.Add(backgorundPanel);
         }
     //    Image image;
 

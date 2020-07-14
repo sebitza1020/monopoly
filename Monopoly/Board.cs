@@ -18,6 +18,13 @@ namespace Monopoly
             cellList.Add(new Cell { x = 50, y = 10, color = Color.Aquamarine, propertyName = "Litere" });
             cellList.Add(new Cell { x = 90, y = 10, color = Color.Beige, propertyName = "Tractoare" });
             cellList.Add(new Cell { x = 130, y = 10, color = Color.ForestGreen, propertyName = "Mucus" });
+
+            int x = 10;
+            foreach (Cell cell in cellList)
+            {
+                cell.x = x;
+                x += Constants.cellWidth + 2;
+            }
         }
 
         public void Show(Form f)
